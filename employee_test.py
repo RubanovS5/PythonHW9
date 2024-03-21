@@ -1,6 +1,8 @@
 import requests
 from employeeTable import employeeTable
+from datetime import datetime
 
+time = datetime.now()
 
 db_connection_string = "postgresql://x_clients_user:x7ngHjC1h08a85bELNifgKmqZa8KIR40@dpg-cn1542en7f5s73fdrigg-a.frankfurt-postgres.render.com/x_clients_xxet"
 
@@ -13,8 +15,8 @@ def test_create_new_employee_sql():
     company_id = sql.get_max_id_company()
     sql.create_employee(
         is_active = True,
-        create_timestamp = '2024-03-21 14:00:00.564 +0300', 
-        change_timestamp = '2024-03-21 14:00:00.564 +0300',
+        create_timestamp = time, 
+        change_timestamp = time,
         first_name = 'Иван',
         last_name  ='Исфаилов',
         middle_name  ='Иванович',
@@ -46,8 +48,8 @@ def test_update_employee():
     company_id = sql.get_max_id_company()
     sql.create_employee(
         is_active = True,
-        create_timestamp = '2024-03-21 15:00:00.564 +0300', 
-        change_timestamp = '2024-03-21 15:00:00.564 +0300',
+        create_timestamp = time, 
+        change_timestamp = time,
         first_name = 'Александр',
         last_name  ='Романов',
         middle_name  ='Петрович',
